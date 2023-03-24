@@ -2,18 +2,13 @@ sudo:  required
 services: 
        - docker
 before_install:
-       - docker build -t seifbelhaj/docker-react -f Dockerfile.dev .
+       - docker build -t seifbelhaj/docker-react12 -f Dockerfile.dev .
 script:
-       - docker run seifbelhaj/docker-react npm run test -- --coverage --watchAll=false
+       - docker run seifbelhaj/docker-react12 npm run test -- --coverage --watchAll=false
 deploy:
-       provider: 
-       region: 
-       app: 
-       env:
-       bucket-name:
-       bucket-path:
-       on:
-        branch: main
-      access_key_id: $azure_access_key
-      secret_access_key:
-        secure: "$azure_secret_key"
+  provider: azure_web_apps
+  username: $AZURE_APP_SERVICE_USERNAME
+  password: $AZURE_APP_SERVICE_PASSWORD
+  site: $AZURE_APP_SERVICE_NAME
+  on:
+    branch: main
