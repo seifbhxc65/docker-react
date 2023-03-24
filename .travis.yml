@@ -8,7 +8,7 @@ script:
 deploy:
   provider: azure_web_apps
   username: $AZURE_APP_SERVICE_USERNAME
-  password: $AZURE_APP_SERVICE_PASSWORD
+  password: 
   site: $AZURE_APP_SERVICE_NAME
   on:
     branch: main
