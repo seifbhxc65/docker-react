@@ -16,4 +16,4 @@ deploy:
         branch: main
       access_key_id: $azure_access_key
       secret_access_key:
-        secure: $azure_secret_key
+        secure: "$azure_secret_key"
