@@ -4,4 +4,4 @@ services:
 before_install:
        - docker build -t seifbelhaj/docker-react -f Dockerfile.dev .
 script:
-       - docker run seifbelhaj/docker-react npm run test -- --coverage
+       - docker run seifbelhaj/docker-react npm run test -- --coverage --watchAll=false
