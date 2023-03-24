@@ -5,3 +5,12 @@ before_install:
        - docker build -t seifbelhaj/docker-react -f Dockerfile.dev .
 script:
        - docker run seifbelhaj/docker-react npm run test -- --coverage --watchAll=false
+# deploy:
+#        provider: 
+#        region: 
+#        app: 
+#        env:
+#        bucket-name:
+#        bucket-path:
+#        on:
+#         branch: main
